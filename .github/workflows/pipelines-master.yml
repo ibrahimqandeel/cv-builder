@@ -19,9 +19,10 @@ jobs:
           java-version: 17
           server-id: github
           settings-path: ${{ github.workspace }}
+
         # Build And Test With Maven
       - name: Build And Test With Maven
-        run: maven build -x test
+        run: mvn install
 
         # Configure AWS credentials
       - name: Configure AWS credentials
