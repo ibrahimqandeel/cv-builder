@@ -54,13 +54,13 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
-        # Setup Java
-#        - name: Setup JDK
-#          uses: actions/setup-java@v1
-#          with:
-#            java-version: 17
-#            server-id: github
-#            settings-path: ${{ github.workspace }}
+    # Setup Java
+    - name: Setup JDK
+      uses: actions/setup-java@v1
+      with:
+        java-version: 17
+        server-id: github
+        settings-path: ${{ github.workspace }}
 
       # Build And Test With Maven
     - name: Build And Test With Maven
