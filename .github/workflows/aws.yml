@@ -24,7 +24,7 @@
 #    See the documentation for each action used below for the recommended IAM policies for this IAM user,
 #    and best practices on handling the access key credentials.
 
-name: Deploy to Amazon ECS
+name: Build and Push Spring Boot Image to AWS ECR
 
 on:
   push:
@@ -44,14 +44,27 @@ permissions:
   contents: read
 
 jobs:
-  deploy:
-    name: Deploy
+  setup-build-publish-deploy:
+    if: github.repository == 'ibrahimqandeel/cv-builder'
+    name: Setup, Build, Publish And Deploy
     runs-on: ubuntu-latest
     environment: production
 
     steps:
     - name: Checkout
       uses: actions/checkout@v3
+
+        # Setup Java
+#        - name: Setup JDK
+#          uses: actions/setup-java@v1
+#          with:
+#            java-version: 17
+#            server-id: github
+#            settings-path: ${{ github.workspace }}
+
+      # Build And Test With Maven
+    - name: Build And Test With Maven
+      run: mvn install
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
