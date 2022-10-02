@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: cv-builder
+
+server:
+  servlet:
+    context-path: /${spring.application.name}
+
+management:
+  endpoints:
+    web.base-path: /help/
+    web.exposure.include: health,info
+    health.show-details: always
+  health:
+    diskspace.enabled: true
+  endpoint:
+    health:
+      show-details: always
