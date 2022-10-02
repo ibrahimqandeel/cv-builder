@@ -32,12 +32,12 @@ on:
 
 env:
   AWS_REGION: eu-central-1                    # set this to your preferred AWS region, e.g. us-west-1
-  ECR_REPOSITORY: ecr_prep_repo               # set this to your Amazon ECR repository name
-  ECS_SERVICE: cv-builder-service             # set this to your Amazon ECS service name
-  ECS_CLUSTER: ecs-prep-cluster               # set this to your Amazon ECS cluster name
+  ECR_REPOSITORY: ecr_repo_prep               # set this to your Amazon ECR repository name
+  ECS_SERVICE: fargate_service_prep           # set this to your Amazon ECS service name
+  ECS_CLUSTER: ecs-cluster-prep               # set this to your Amazon ECS cluster name
   ECS_TASK_DEFINITION: .aws/task-definition.json # set this to the path to your Amazon ECS task definition
                                               # file, e.g. .aws/task-definition.json
-  CONTAINER_NAME: cv-builder-cont             # set this to the name of the container in the
+  CONTAINER_NAME: cont_cv_builder_prep             # set this to the name of the container in the
                                               # containerDefinitions section of your task definition
 
 permissions:
