@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cv-builder-deployment
+  labels:
+    app: cv-builder-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cv-builder-api
+  template:
+    metadata:
+      labels:
+        app: cv-builder-api
+    spec:
+      containers:
+        - name: cv-builder-api
+          image: nginx:1.14.2
+          ports:
+            - containerPort: 8080
