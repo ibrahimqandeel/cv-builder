@@ -16,6 +16,7 @@ spec:
     spec:
       containers:
         - name: cv-builder-api
-          image: nginx:1.14.2
+          image: 814530570635.dkr.ecr.eu-west-1.amazonaws.com/dev-ecr-repo-1:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080

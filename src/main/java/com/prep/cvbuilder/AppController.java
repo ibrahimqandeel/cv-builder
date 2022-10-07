@@ -15,6 +15,6 @@ public class AppController {
 
     @GetMapping
     public String getAppName(){
-        return "Hello from -> " + applicationName;
+        return "App name -> " + applicationName + ". This app is deployed on EKS.";
     }
 }
